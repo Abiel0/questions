@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 // Password for answering questions
 const ANSWER_PASSWORD = 'jeabi098ws';
@@ -60,6 +59,5 @@ app.put('/api/questions/:id', (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// Remove the app.listen() call for Vercel deployment
+module.exports = app;
